@@ -1,0 +1,14 @@
+mat-toolbar {
+    background-color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}

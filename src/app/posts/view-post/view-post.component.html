@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between">
+                <h1 class="bold heading">{{selectedPost.title}}</h1>
+                <button mat-raised-button color="primary" type="button" routerLink="/posts" class="route-button">
+                    All Posts
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <p>{{selectedPost.content}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 offset-lg-2">
+            <div class="profile-div">
+                <div class="main-avatar">
+                    <img class="main-avatar-img" [src]="imagePreview" [alt]="username">
+                </div>
+                <div class="main-content">
+                    <h1 class="bold heading">{{username}}</h1>
+                    <p>{{email}}</p>
+                    <button mat-raised-button routerLink="edit-profile" class="mt-2">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12 offset-lg-2 mt-4">
+            <h1 class="bold">About</h1>
+            <p>{{bio}}</p>
+        </div>
+    </div>
+</div>

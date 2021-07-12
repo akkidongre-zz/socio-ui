@@ -1,0 +1,32 @@
+.content-card {
+    text-align: left;
+    width: 13rem;
+    height: 7rem;
+    cursor: pointer;
+}
+
+.title {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 20px;
+    max-height: 20px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.content {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    max-height: 64px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+:host::ng-deep.mat-card-header-text {
+    margin-left: 0;
+}

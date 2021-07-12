@@ -1,0 +1,15 @@
+.form-row {
+    margin-top: 2rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: grey;
+    margin-bottom: 2rem;
+}
+
+.home-image {
+    width: 100%;
+    height: auto;
+    /* object-fit: cover; */
+}

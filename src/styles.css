@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary: #084EFD;
+    --primaryDark: #0026c9;
+    --accent: #FF9100;
+}
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: 'Poppins', "Helvetica Neue", Roboto, sans-serif; 
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin: 0px;
+}
+
+.primary {
+    color: var(--primary);
+}
+
+.primary-dark {
+    color: var(--primaryDark);
+}
+
+.dark-blue {
+    color: #2a334b;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.grey {
+    color: grey;
+}
+
+.bold {
+    font-weight: 700 !important;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.brand-title {
+    color: #084EFD;
+    display: inline-block;
+    margin-bottom: 0 !important;
+}
+
+.heading {
+    font-size: 2rem !important;
+}
+
+.component-heading {
+    font-size: 1.5rem !important;
+}
+
+.route-button {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+mat-spinner {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin-top: -10px !important;
+    margin-left: -10px !important;
+}

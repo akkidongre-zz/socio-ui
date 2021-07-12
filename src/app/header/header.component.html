@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <mat-icon class="dark-blue">blur_on</mat-icon>
+    <h2 class="brand-title bold ms-2">Socio</h2>
+    <span class="spacer"></span>
+    <button mat-button *ngIf = "isLoggedIn" routerLink = "/posts">Posts</button>
+    <button mat-button *ngIf = "isLoggedIn" routerLink = "/profile">Profile</button>
+    <button mat-button *ngIf = "isLoggedIn" (click) = "logout()">Logout</button>
+</mat-toolbar>
+

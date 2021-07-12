@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 offset-lg-2">
+            <div class="d-flex justify-content-between">
+                <h1 class="bold heading">Edit Profile</h1>
+                <button class="ms-4" mat-button [routerLink] = "['/profile']">Go Back</button>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12 offset-lg-2 mt-4">
+            <div class="d-flex justify-content-start">
+                <div class="edit-avatar">
+                    <img class="edit-avatar-img" [src]="imagePreview" alt="">
+                </div>
+
+                <button mat-raised-button color="primary" class="ms-4" (click) = "imagePicker.click()">Upload New Picture</button>
+                <input type="file" #imagePicker (change) = "onImagePicked($event)">
+                <button mat-raised-button class="ms-4" (click) = "onDeleteImage()">Delete</button>
+            </div>
+
+            <form [formGroup] = "editProfileForm" (ngSubmit) = "editProfile()" class="mt-4">
+                <mat-label>Name</mat-label>
+                <mat-form-field appearance = "outline" class="full-width" floatLabel="never">
+                    <input type="text" matInput placeholder="Enter your name" formControlName="name" required>
+                    <mat-error *ngIf = "editProfileForm.controls.name.touched && editProfileForm.controls.name.invalid">
+                        Please enter your name
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-label>About Me</mat-label>
+                <mat-form-field appearance = "outline" class="full-width" floatLabel="never">
+                    <textarea matInput rows="5" placeholder="Write something cool about you..." formControlName="bio"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button type="submit" class="mt-2" color="primary" [disabled] = "isSubmitting">
+                    Save Profile
+                    <mat-spinner *ngIf = "isSubmitting" diameter="20"></mat-spinner>
+                </button>
+                <button mat-raised-button type="button" class="mt-2 ms-4" [routerLink] = "['/profile']">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

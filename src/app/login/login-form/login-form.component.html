@@ -1,0 +1,47 @@
+<form [formGroup] = "loginForm" (ngSubmit)="loginWithEmail()">
+    <mat-label>Email address</mat-label>
+    <mat-form-field appearance = "outline" class="full-width" floatLabel="never">
+        <input matInput placeholder="Enter your email address" type="email" formControlName="email" required>
+        <span matPrefix aria-hidden="true">
+            <mat-icon class="grey">mail_outline</mat-icon>
+        </span>
+        <mat-error *ngIf = "loginForm.controls.email.invalid">
+            Please enter a valid email
+        </mat-error>
+    </mat-form-field>
+
+    <mat-label>Password</mat-label>
+    <mat-form-field appearance = "outline" class="full-width" floatLabel="never">
+        <input matInput placeholder="Enter your password" type="password" formControlName="password" required>
+        <span matPrefix aria-hidden="true">
+            <mat-icon class="grey">lock_outline</mat-icon>
+        </span>
+        <mat-error *ngIf = "loginForm.controls.password.invalid">
+            Please enter a password
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" 
+    type="submit" 
+    class="full-width mt-4"
+    [disabled] = "isLoggingIn"
+    >
+        Log in
+        <mat-spinner diameter="20" *ngIf="isLoggingIn"></mat-spinner>
+    </button>
+</form>
+
+<div class="text-center mt-4 ">
+    <p class="grey">-- OR --</p>
+    <div class="d-flex justify-content-between">
+        <button mat-raised-button (click) = "loginWithGoogle()">
+            <img src="../../assets/googleLogo.svg" alt="Google logo" class="login-button-img">
+            <span class="ms-2">Log in with Google</span>
+        </button>
+    
+        <button mat-raised-button (click) = "loginWithFacebook()">
+            <img src="../../assets/facebookLogo.svg" alt="Facebook Logo" class="login-button-img">
+            <span class="ms-2">Log in with Facebook</span>
+        </button>
+    </div>
+</div>

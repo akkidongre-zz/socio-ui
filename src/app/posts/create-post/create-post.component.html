@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between">
+                <h1 class="bold heading">Create Post</h1>
+                <button mat-raised-button type="button" class="route-button" routerLink="/posts" color="primary">
+                    View Posts
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-8 col-md-12 offset-lg-2">
+            <form [formGroup] = "postForm" (ngSubmit) = "createPost()" class="mt-4">
+                <mat-label>Title</mat-label>
+                <mat-form-field appearance="outline" class="full-width" floatLabel="never">
+                    <input type="text" matInput placeholder="Enter title of the post" formControlName="title" required>
+                    <mat-error *ngIf = "postForm.controls.title.touched && postForm.controls.title.invalid">
+                        Please enter title of the post
+                    </mat-error>
+                </mat-form-field>
+            
+                <mat-label>Post Content</mat-label>
+                <mat-form-field appearance="outline" class="full-width" floatLabel="never">
+                    <textarea rows="8" matInput placeholder="Enter content of the post" formControlName="content" required></textarea>
+                    <mat-error *ngIf = "postForm.controls.content.touched && postForm.controls.content.invalid">
+                        Please enter content of the post
+                    </mat-error>
+                </mat-form-field>
+            
+                <button mat-raised-button type="submit" [disabled]="postForm.invalid || isCreating" color="primary">
+                    Create Post
+                    <mat-spinner diameter="20" *ngIf="isCreating"></mat-spinner>
+                </button>
+                <button mat-raised-button type="button" class="ms-2" routerLink = "/posts">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

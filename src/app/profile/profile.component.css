@@ -1,0 +1,23 @@
+.profile-div {
+    display: flex;
+    justify-content: start;
+}
+
+.main-content {
+    margin-left: 2rem;
+}
+
+.main-avatar {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e7e7e9;
+}
+
+.main-avatar-img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+}
