@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
   username = "We need your name!";
   email: string;
   bio = "Nothing in here. Let's add some cool stuff!";
-  imagePreview = "../../assets/friends.jpg";
+  imagePreview = "";
 
   constructor(
     private authService: AuthService

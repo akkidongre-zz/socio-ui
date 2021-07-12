@@ -19,6 +19,8 @@ export class EditProfileComponent implements OnInit {
 
   allowedImageFormats = ['png', 'jpg', 'jpeg'];
 
+  profileUpdated = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -112,6 +114,7 @@ export class EditProfileComponent implements OnInit {
         duration: 3000
       });
       this.isSubmitting = false;
+      this.profileUpdated = true;
     }, (error) => {
       this.snackbar.open("Could not update your profile", "Oh!", {
         duration: 3000
@@ -135,6 +138,7 @@ export class EditProfileComponent implements OnInit {
         duration: 3000
       });
       this.isSubmitting = false;
+      this.profileUpdated = true;
     }, (error) => {
       this.snackbar.open("Could not update your profile", "Oh!", {
         duration: 3000

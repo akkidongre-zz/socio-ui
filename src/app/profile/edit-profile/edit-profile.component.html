@@ -3,18 +3,19 @@
         <div class="col-lg-8 col-md-12 offset-lg-2">
             <div class="d-flex justify-content-between">
                 <h1 class="bold heading">Edit Profile</h1>
-                <button class="ms-4" mat-button [routerLink] = "['/profile']">Go Back</button>
+                <button class="ms-4" mat-button [routerLink] = "['/profile']" *ngIf = "!profileUpdated">Go Back</button>
+                <button class="ms-4" mat-raised-button [routerLink] = "['/profile']" *ngIf = "profileUpdated" color="accent">Go Back</button>
             </div>
         </div>
         <div class="col-lg-8 col-md-12 offset-lg-2 mt-4">
             <div class="d-flex justify-content-start">
                 <div class="edit-avatar">
-                    <img class="edit-avatar-img" [src]="imagePreview" alt="">
+                    <img class="edit-avatar-img" [src]="imagePreview" alt="" *ngIf = "imagePreview">
                 </div>
 
                 <button mat-raised-button color="primary" class="ms-4" (click) = "imagePicker.click()">Upload New Picture</button>
                 <input type="file" #imagePicker (change) = "onImagePicked($event)">
-                <button mat-raised-button class="ms-4" (click) = "onDeleteImage()">Delete</button>
+                <button mat-raised-button class="ms-4" (click) = "onDeleteImage()" [disabled] = "!imagePreview">Delete</button>
             </div>
 
             <form [formGroup] = "editProfileForm" (ngSubmit) = "editProfile()" class="mt-4">

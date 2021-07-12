@@ -18,6 +18,7 @@ export class LoginFormComponent implements OnInit {
   socialUser: SocialUser;
   isLoggedIn = false;
   isLoggingIn = false;
+  hide = true;
 
   constructor(
     private formBuilder: FormBuilder,

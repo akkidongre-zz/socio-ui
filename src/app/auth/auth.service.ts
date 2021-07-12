@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { PostsService } from '../posts/posts.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AuthService {
   tokenTimer: ReturnType<typeof setTimeout>;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private postsService: PostsService
   ) { }
 
   getToken() {
@@ -53,6 +55,7 @@ export class AuthService {
   logOut() {
     this.isLoggedIn = false;
     this.token = '';
+    this.postsService.posts = [];
     this.clearAuthData();
     this.authStatus.next(false);
     this.router.navigate(['']);

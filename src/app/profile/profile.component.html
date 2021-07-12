@@ -3,7 +3,7 @@
         <div class="col-lg-8 col-md-12 offset-lg-2">
             <div class="profile-div">
                 <div class="main-avatar">
-                    <img class="main-avatar-img" [src]="imagePreview" [alt]="username">
+                    <img class="main-avatar-img" [src]="imagePreview" [alt]="username" *ngIf = "imagePreview">
                 </div>
                 <div class="main-content">
                     <h1 class="bold heading">{{username}}</h1>
