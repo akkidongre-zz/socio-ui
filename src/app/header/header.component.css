@@ -1,5 +1,6 @@
 mat-toolbar {
     background-color: white;
+    height: 96px;
 }
 
 .spacer {

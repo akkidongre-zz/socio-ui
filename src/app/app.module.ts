@@ -43,12 +43,12 @@ import { AuthInterceptor } from './auth/auth.interceptor';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '1094270316837-v97tht2ssud9l1bks9khc1484rmk8tc6.apps.googleusercontent.com'
+              'SECRET KEY'
             )
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('347316976969853')
+            provider: new FacebookLoginProvider('SECRET KEY')
           }
         ]
       } as SocialAuthServiceConfig,
