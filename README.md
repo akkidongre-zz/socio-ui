@@ -28,6 +28,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 4. Better models for data types can be created.
 5. Initial components can be lazy loaded to improve lcp.
 6. Instagram, git logins could be done.
+7. Responsiveness is not properly taken care.
 
 ## Possible design issues
 
